@@ -57,7 +57,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`order_id`),
   KEY `fk_orders_prod_id` (`prod_id`),
   KEY `fk_orders_user_id` (`user_id`),
-  CONSTRAINT `fk_orders_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `products` (`prod_id`),
+  CONSTRAINT `fk_orders_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `products` (`prod_id`) ON DELETE SET NULL,
   CONSTRAINT `fk_orders_user_id` FOREIGN KEY (`user_id`) REFERENCES `members` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='주문 내역 테이블';
 
