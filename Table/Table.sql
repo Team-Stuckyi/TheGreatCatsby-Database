@@ -52,12 +52,13 @@ CREATE TABLE `orders` (
   `order_date` datetime NOT NULL COMMENT '주문 날짜',
   `order_select` enum('T','K') NOT NULL COMMENT '결제 방식',
   `order_count` int NOT NULL COMMENT '상품 수량',
+  `order_status` enum('Y','N') NOT NULL COMMENT '주문 상태',
   `prod_id` int NOT NULL COMMENT '상품 일련번호',
   `user_id` int NOT NULL COMMENT '회원 일련번호',
   PRIMARY KEY (`order_id`),
   KEY `fk_orders_prod_id` (`prod_id`),
   KEY `fk_orders_user_id` (`user_id`),
-  CONSTRAINT `fk_orders_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `products` (`prod_id`) ON DELETE SET NULL,
+  CONSTRAINT `fk_orders_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `products` (`prod_id`),
   CONSTRAINT `fk_orders_user_id` FOREIGN KEY (`user_id`) REFERENCES `members` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='주문 내역 테이블';
 
