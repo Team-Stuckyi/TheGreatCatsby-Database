@@ -1,5 +1,7 @@
 # TheGreatCatsby-Database
 
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white"/>
+
 ## 👋 소개
 
 위대한캣츠비 프로젝트 데이터베이스입니다.
